@@ -25,9 +25,9 @@ app.get('/bmicalculator', (req, res) => {
 
 
 app.post('/bmicalculator', (req, res) => {
-    let weight = Number(req.body.weight)
-    let height = Number(req.body.height)
-    let result = Math.floor((weight / (height^2)) * 703)
+    let weight = parseFloat(req.body.weight)
+    let height = parseFloat(req.body.height)
+    let result = (weight / (height * height)) * 703
     res.send(`With a weight of ${weight} lbs and a height of ${height} inches, your total BMI calculation is ${result}`)
 })
 
